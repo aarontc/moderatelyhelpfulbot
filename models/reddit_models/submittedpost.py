@@ -8,12 +8,11 @@ from logger import logger
 from praw.models import Submission
 from sqlalchemy import Boolean, Column, DateTime, Integer, String
 from enums import CountedStatus, PostedStatus
-from settings import login_credentials
+from settings import BOT_NAME
+
 # from models.reddit_models.redditinterface import SubmissionInfo
 
 s = dbobj.s
-
-BOT_NAME = login_credentials["bot_name"]
 
 
 class SubmittedPost(dbobj.Base):  # need posted_status

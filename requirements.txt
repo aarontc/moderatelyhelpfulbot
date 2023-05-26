@@ -2,8 +2,11 @@ feedparser
 humanize
 iso8601
 pytz
-sqlalchemy
+sqlalchemy<2.0
 pyyaml
 prawcore
 iso8601
 praw
+psycopg2
+pymysql
+cryptography

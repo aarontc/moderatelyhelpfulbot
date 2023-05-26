@@ -1,7 +1,7 @@
 from typing import Any, Dict
 
 from database import Database
-from settings import login_credentials, CLIENT_ID, CLIENT_SECRET, BOT_PW, BOT_NAME
+from settings import CLIENT_ID, CLIENT_SECRET, BOT_PW, BOT_NAME
 
 
 
@@ -27,4 +27,4 @@ WATCHED_SUBS: Any = {}
 dbobj = Database()
 dbobj.load_models()
 
-BOT_SUB = login_credentials["bot_name"]
+BOT_SUB = BOT_NAME

@@ -729,7 +729,7 @@ def handle_dm_command(wd: WorkingData, subreddit_name: str, requestor_name, comm
     print("asking for permission: {}, mod list: {}".format(requestor_name, ",".join(moderators)))
     if requestor_name is not None and requestor_name not in moderators and requestor_name != BOT_OWNER \
             and requestor_name != "[modmail]":
-        if subreddit_name is "subredditname" or subreddit_name is "yoursubredditname":
+        if subreddit_name == "subredditname" or subreddit_name == "yoursubredditname":
             return "Please change 'subredditname' to the name of your subreddit so I know what subreddit you mean!", \
                    True
         return f"You do not have permission to do this. Are you sure you are a moderator of {subreddit_name}?\n\n " \

@@ -1,0 +1,43 @@
+version: "3"
+
+
+services:
+  bot:
+    build:
+      context: .
+    depends_on:
+      - db
+    environment:
+      CLIENT_ID: 2haJeYbyeOpqK-Z5XzUD0g
+      CLIENT_SECRET: _QDPCni2YvH9gomSvPGNFtks8TALCw
+      BOT_PW: hUpb2LYaFhA7swEaj3eE3m4xwqEFCcfBW4MbQjcHokbf3zSmVgkLTyQUdWMARWg64
+      BOT_NAME: R4RHelpfulBot
+      BOT_OWNER: R4R
+      DB_ENGINE: mysql+pymysql://mhb:p9zno4vS6ozA28JcwsigSsa43RmmNsPvyL8b@db:3306/mhb?charset=utf8mb4
+    restart: unless-stopped
+
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: mhb
+      MYSQL_PASSWORD: p9zno4vS6ozA28JcwsigSsa43RmmNsPvyL8b
+      MYSQL_ROOT_PASSWORD: p9zno4vS6ozA28JcwsigSsa43RmmNsPvyL8bbutforroot
+      MYSQL_USER: mhb
+    restart: unless-stopped
+    volumes:
+      - data:/var/lib/mysql
+
+#  pgdb:
+#    image: postgres:12-alpine
+#    environment:
+#      POSTGRES_DB: mhb
+#      POSTGRES_INITDB_ARGS: --data-checksums
+#      POSTGRES_PASSWORD: p9zno4vS6ozA28JcwsigSsa43RmmNsPvyL8b
+#      POSTGRES_USER: mhb
+#    restart: unless-stopped
+#    volumes:
+#      - data:/var/lib/postgresql/data
+
+
+volumes:
+  data:
